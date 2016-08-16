@@ -71,7 +71,7 @@
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a  href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-format-underlined"></i>Input Data {{$survey2->id_Survey}}</a>
+                        <a  href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-format-underlined"></i>Input Data {{$survey2-> id_Survey}}</a>
                         <ul>
                                 @foreach($tahapanSurvey2 as $tahapan)
                                 <li>
@@ -84,7 +84,7 @@
                         </ul>
                     </li>
                     <li @yield('administration')>
-                        <a href="{{ url('/administrasi') }}"><i class="zmdi zmdi-swap-alt"></i> Administration</a>
+                        <a href="{{ url($survei2->id_Survey.'/administrasi') }}"><i class="zmdi zmdi-swap-alt"></i> Administration</a>
                     </li>
                     <li @yield('privilege')>
                         <a href="{{ url('/privilege') }}"><i class="zmdi zmdi-collection-text"></i> Pusat Data</a>
@@ -108,7 +108,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
+                </ul> 
         </aside>
     @endsection
 

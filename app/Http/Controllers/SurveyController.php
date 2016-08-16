@@ -233,7 +233,7 @@ class SurveyController extends Controller
         $now2 = date('Y');
         $survey2=DB::table('survey')->where('id_Survey', $id_Survey)->first();
         $tahapanSurvey = DB::table('tahapanSurvey')->get(); 
-        $tahapanSurvey2 = DB::table('tahapansurvey') -> where('id_Survey',$survey2 -> id_Survey) -> get();
+        $tahapanSurvey2 = DB::table('tahapansurvey') -> where('id_Survey',$id_Survey) -> get();
         return view('superadmin.survey', compact('user','survey','tahapanSurvey','tahapanSurvey2','survey2')); 
     }
     

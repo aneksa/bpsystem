@@ -225,7 +225,7 @@
                                     <td>
                                         <a href="{{ url('administrasi/editpengguna') }}" type="button" class="btn  palette-Indigo bg">Edit</a>
                                         
-                                        <a href="{{ url('administrasi/delete/'.$user -> id_User ) }}" type="button" class="btn  palette-Red bg">Delete</a>
+                                        <a href="{{ url($id_Survey.'/administrasi/delete/'.$user -> id_User ) }}" type="button" class="btn  palette-Red bg">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

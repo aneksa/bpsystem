@@ -28,12 +28,12 @@ Route::post('import', 'ExcelController@wilayah');
 
 //administrasi
 Route::get('{id_Survey}/administrasi','AdministrasiController@index');
-Route::get('administrasi/delete/{id_User}', 'AdministrasiController@delete');
+Route::get('{id_Survey}/administrasi/delete/{id_User}', 'AdministrasiController@delete');
 
 //Survey
 Route::get('createsurvey', 'SurveyController@index');
-Route::post('survey/create', 'SurveyController@create');
-Route::get('/{id_Survey}', 'SurveyController@survey');
+Route::post('createsurvey', 'SurveyController@create');
+Route::get('{id_Survey}', 'SurveyController@survey');
 Route::get('{id_Survey}/{id_Tahapan}', 'SurveyController@progress');
 
 //input data
@@ -46,3 +46,4 @@ Route::get('survey/tahapan', 'TahapanController@create');
 
 //inputprogress
 Route::get('{id_Survey}/{id_Tahapan}/inputprogress', 'InputProgressController@index');
+

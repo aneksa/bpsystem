@@ -15,19 +15,19 @@ class AdministrasiController extends Controller
             $user=DB::table('users')
                 ->where('email', session::get('email'))
                 ->first();
-            $daftarHakAkses = DB::table('se-hakakses')->get();
+            $daftarHakAkses = DB::table($id_Survey.'-hakakses')->get();
             $survey=DB::table('survey')->get();
             $survey2=DB::table('survey')->where('id_Survey', $id_Survey)->first();
             $tahapanSurvey = DB::table('tahapansurvey')->get(); 
             $tahapanSurvey2 = DB::table('tahapansurvey') -> where('id_Survey', $id_Survey) -> get();
-            return view('superadmin.administrasi',compact('user','daftarHakAkses','survey','survey2','tahapanSurvey2'));
+            return view('superadmin.administrasi',compact('user','daftarHakAkses','survey','survey2','tahapanSurvey2','id_Survey'));
         }
         else {
             return redirect('/');
         }
     }
-    public function delete($id_User) {
-        $deleted = DB::table('se-hakakses')-> where('id_User', $id_User) ->delete();
+    public function delete($id_Survey,$id_User) {
+        $deleted = DB::table($id_Survey.'-hakakses')-> where('id_User', $id_User) ->delete();
         return back();
     }
 }
